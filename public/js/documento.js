@@ -1,7 +1,6 @@
-import { emitirTextoEditor } from "./socket-front-documento.js";
+// import { emitirTextoEditor } from "./socket-front-documento.js";
 
 const socket = io();
-var Data = new Date();
 
 class mensagem {
   constructor(texto, id, Data) {
@@ -29,11 +28,7 @@ socket.on("texto_editor_clientes", (texto) => {
   console.log(texto);
 })
 
-function atualizaTextoEditor(texto) {
-  textoEditor.value = texto;
-}
 
-export { atualizaTextoEditor };
 
 
 function addElement(IdElemento, conteudo) {

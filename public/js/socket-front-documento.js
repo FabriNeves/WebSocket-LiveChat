@@ -1,16 +1,16 @@
-import { atualizaTextoEditor } from "./documento.js";
+// import { atualizaTextoEditor } from "./documento.js";
 
 
-const socket = io();
+// const socket = io();
 
-function emitirTextoEditor(texto) {
-  socket.emit("texto_editor", texto);
-}
+// function emitirTextoEditor(texto) {
+//   socket.emit("texto_editor", texto);
+// }
 
-socket.on("texto_editor_clientes", (texto) => {
-  atualizaTextoEditor(texto);
+// socket.on("texto_editor_clientes", (texto) => {
+//   atualizaTextoEditor(texto);
   
-});
+// });
 
-// => Documento.
-export { emitirTextoEditor };
+// // => Documento.
+// export { emitirTextoEditor };

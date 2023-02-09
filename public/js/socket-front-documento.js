@@ -1,5 +1,5 @@
 import { atualizaTextoEditor } from "./documento.js";
-import { escreveHashUser } from "./documento.js";
+
 
 const socket = io();
 
@@ -9,6 +9,8 @@ function emitirTextoEditor(texto) {
 
 socket.on("texto_editor_clientes", (texto) => {
   atualizaTextoEditor(texto);
+  
 });
 
+// => Documento.
 export { emitirTextoEditor };

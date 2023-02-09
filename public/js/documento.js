@@ -1,24 +1,54 @@
 import { emitirTextoEditor } from "./socket-front-documento.js";
 
+const socket = io();
+var Data = new Date();
 
-const textoEditor = document.getElementById("mensagem");
-const divUser  = document.getElementById("users");
+class mensagem {
+  constructor(texto, id, Data) {
+    this.texto = texto;
+    this.id = id;
+    this.Data = Data;
+  }
+}
 
-textoEditor.addEventListener("keydown",() =>{
-  console.log(textoEditor.value);
+const Msg = document.getElementById("mensagem");
+const divUser = document.getElementById("users");
+
+Msg.addEventListener("keyup", function (e) {
+  if (e.key === "Enter") {
+    const stringHora = updateHora();
+    const fullMsg = `${stringHora}| ${Msg.value} | ${socket.id}`
+    addElement("mensagens", fullMsg);
+    Msg.value = "";
+    socket.emit("mensagem", fullMsg);
+  }
 })
-textoEditor.addEventListener("keyup", () => {
 
-  emitirTextoEditor(textoEditor.value);
-});
+socket.on("texto_editor_clientes", (texto) => {  
+  addElement("mensagens", texto);
+  console.log(texto);
+})
 
 function atualizaTextoEditor(texto) {
   textoEditor.value = texto;
 }
 
-function escreveHashUser (id) {
-  divUser.innerHTML(`<p>${id}</p>`);  
+export { atualizaTextoEditor };
+
+
+function addElement(IdElemento, conteudo) {
+  const newDiv = document.createElement("div");
+  const newContent = document.createTextNode(conteudo);
+  newDiv.appendChild(newContent);
+  const currentDiv = document.getElementById(String(IdElemento));
+  console.log(currentDiv);
+  currentDiv.appendChild(newDiv);
 }
 
-export { atualizaTextoEditor};
-export default  escreveHashUser;
+function updateHora() {
+  const dateToday = new Date();
+  const hr = dateToday.getHours();
+  const min = dateToday.getMinutes();
+  const s = dateToday.getSeconds();
+  return `${hr}:${min}:${s}`;
+}

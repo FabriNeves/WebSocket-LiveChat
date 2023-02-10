@@ -1,3 +1,102 @@
+
 body {
+    width: 640px;
+    margin: 0 auto;
+}
+
+h1 {
+    padding-top: 0.5em;
     text-align: center;
+    font-size: 40px;    
+    font-family: 'Montserrat', sans-serif;
+    padding-bottom: 0.5em;   
+    margin-bottom: 0.5em;
+}
+
+#idUser {
+    text-align: left;
+    font-size: 10px;
+    color: black;
+    position: relative;
+    right: -59px;
+}
+.mensagens {
+    text-align: center;
+}
+
+#mensagem {
+    height: 30px;
+    width: 500px;
+    margin: 0 auto;
+    padding: 10px;
+    resize: none;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    /* box-shadow: 1px 1px 2px black; */
+}
+#mensagem:focus{
+    outline: #0d6efd;
+}
+.envioMensagem{
+    text-align: center;
+
+}
+.enviar {
+    font-size: 16px;
+    background: #0d6efd;
+    color: white;
+    padding: 10px 15px 10px 15px;
+    border: 0.5px solid lightblue;
+    border-radius: 5px;
+    position: relative;
+    left: -58px;
+}
+.enviar:hover{
+    background: #0a58ce;
+    transition: 1s;
+}
+.botoesEnviar {    
+   text-align: end;
+    
+}
+h2 {
+    padding-top: 0.5em;
+    text-align: center;
+    font-size: 22px;    
+    font-family: 'Montserrat', sans-serif;
+    padding-bottom: 0.5em;   
+    margin-bottom: 0.5em;
+}
+
+/* Mensagens  */
+
+.msg{
+    padding: 10px;
+    /* border-top: 0.1px solid #d6d6d6; */
+    border-bottom: 0.1px solid #d6d6d6;    
+}
+
+.mensagensCriadas {
+    display: flex;
+    padding: 2px;
+    justify-content: space-around;
+
+}
+.cabecalho {
+    margin-bottom: 1em;
+}
+.texto {
+    font-size: 16px;
+    
+}
+.id {
+    padding-right: 10px;
+    color: #0d6efd;
+    font-size: 18px;
+    display: inline;
+}
+.Data {
+    color: grey;
+    display: inline;
+    font-size: 12px;
 }

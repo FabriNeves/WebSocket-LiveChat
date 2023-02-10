@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <title>Chat Page WebSocket</title>
 </head>
 
@@ -18,21 +19,32 @@
     </header>
     <main>
         <div class="envioMensagem">
-            <h2>Enviar mensagem</h2>
-            <form>
-                <!-- <label for="texto-mensagem">Mensagem</label> -->
-                <div class="campoDeMensagem">
-                    <textarea id="mensagem" class="input-padrao" required></textarea>
-                </div>
-                <div class="botoesEnviar">
-                    <button type="submit" class="enviar">Enviar</button>
-                </div>
-            </form>
+            <p id="idUser">none</p>
+
+            <div class="campoDeMensagem">
+                <textarea id="mensagem" class="input-padrao" required></textarea>
+            </div>
+            <div class="botoesEnviar">
+                <button class="enviar">Enviar</button>
+            </div>
         </div>
         <div class="mensagensStorage">
-            <h2>Mensagens</h2>
+            <h2 class="titulo2">Mensagens</h2>
         </div>
         <div id="mensagens">
+            <div class="msg">
+                <div class="cabecalho">
+                    <p class="id">Nome </p>
+                    <p class="Data"> 13:01:59 - Feb 03 - 1999</p>
+                </div>
+                <p class="texto"> "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor
+                    massa. Pellentesque habitant morbi tristique senectus et netus et malesuada
+                    fames ac turpis egestas. Nulla at risus.
+                    Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis,
+                    felis ut adipiscing."</p>
+            </div>
+
         </div>
     </main>
     <script src="/socket.io/socket.io.js"></script>

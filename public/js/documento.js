@@ -3,7 +3,7 @@ const divUserName = document.getElementById("idUser");
 
 
 const socket = io();
-divUserName.addEventListener("load",()=> {
+divUserName.addEventListener("keyup",()=> {
   console.log("Load");
   divUserName.value = socket.id;
 }
